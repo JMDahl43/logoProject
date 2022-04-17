@@ -22,8 +22,11 @@ h1 {
     margin: 15px auto;
 }
 .source div {
-    height:86px;
+    display: inline-block;
+    position: relative;
     width: 86px;
+    height: 86px;
+   
 }
 
 .targetContainer {
@@ -39,6 +42,14 @@ h1 {
     height: 86px;
     width: 86px;
     border: 1px solid #c7c7c7;
+    text-align: center;
+    background-color: #fff;
+}
+
+#blueTarget { 
+    top: 239px;
+    left: 291px;
+    border: 1px solid blue;
 }
 
 button {

@@ -10,11 +10,7 @@ const blackLft = document.querySelector('#blackLftDot');
 const blackRgt = document.querySelector('#blackRgtDot'); 
 
 const targets = document.querySelectorAll('.targetDrop');
-for(const target of targets) {
-    console.log('Target: ', target);
-    target.addEventListener('drop', dragDrop);
-}
-
+//const target = document.querySelector('#blueTarget');
 
 // Target Drop Listeners
 blue.addEventListener('dragstart', dragStart);
@@ -28,14 +24,40 @@ blackLft.addEventListener('dragend', dragEnd);
 blackRgt.addEventListener('dragstart', dragStart);
 blackRgt.addEventListener('dragend', dragEnd);
 
-function dragStart() {
-    console.log('start');
+for(const target of targets) {
+    target.addEventListener('dragover', dragOver);
+    target.addEventListener('dragenter', dragEnter);
+    target.addEventListener('dragleave', dragLeave);
+    target.addEventListener('drop', dragDrop);
+}
+
+
+function dragStart(e) {
+    console.log('Drag Start: ', e.target.id);
 }
 
 function dragEnd() {
-    console.log('end');
+    //console.log('end');
 }
 
-function dragDrop() {
-    console.log('Event: ', 'drop');
+function dragOver(e) {
+    //console.log('Over');
+    e.preventDefault();
+
+}
+
+function dragEnter(e) { 
+    console.log('Enter');
+
+}
+function dragLeave() {
+    console.log('Leave');
+}
+
+ function dragDrop(e) {
+    //console.log('Drop');
+   // e.preventDefault();
+    const id = e.dataTransfer.getData('text/plain');
+    console.log('ID', id);
+    
 }
