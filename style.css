@@ -12,6 +12,7 @@ body{
 h1 {
     text-align: center;
     margin: 15px auto;
+    color: green;
 }
 
 .source {
@@ -45,29 +46,29 @@ h1 {
     position: absolute;
 }
 #blueTarget {
-    top: 234px;
+    top: 182px;
     left: 293px;
     /* border: 1px solid blue; */
 }
 #redTarget {
-    top:258px;
-    left:473px;
+    top:206px;
+    left:474px;
     /* border: 1px solid red; */
 }
 #greenTarget {
-    top:523px;
-    left:161px;
-    /* border: 1px solid green; */
+    top:472px;
+    left:160px;
+   /* border: 1px solid green; */
 }
 #blackLftTarget {
-    top:379px;
-    left:65px;
+    top:327px;
+    left:64px;
     /* border: 1px solid black; */
 }
 #blackRgtTarget {
-    top:474px;
-    left:437px;
-    /* border: 1px solid maroon; */
+    top:422px;
+    left:436px;
+   /*  border: 1px solid maroon; */
 }
 
 /*  Target Square */
@@ -82,6 +83,7 @@ h1 {
 .hide {
     display: none;
 }
+
 button {
     margin: 10px 1px;
     font-size: 1.5e;

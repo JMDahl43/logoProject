@@ -10,7 +10,7 @@ const blackLft = document.querySelector('#blackLftDot');
 const blackRgt = document.querySelector('#blackRgtDot'); 
 
 const targets = document.querySelectorAll('.targetDrop');
-//const target = document.querySelector('#blueTarget');
+let dotsCorrect = 0;
 
 // Target Drop Listeners
 blue.addEventListener('dragstart', dragStart);
@@ -60,7 +60,13 @@ function dragLeave() {
     //console.log('Drop');
     const id = e.dataTransfer.getData('text/plain');
     console.log('ID', id);
-    
+
+    dotsCorrect += 1;
+    if(dotsCorrect === 5) {
+        document.querySelector('.source').innerHTML = '<h1>Congratulations, Logo Complete!</h1>';
+    }
+    console.log(dotsCorrect);
+
     // Get the Dot to Stay in Target
     if (id === 'blueDot')
         this.append(blue);
@@ -72,7 +78,5 @@ function dragLeave() {
         this.append(blackLft)
     else if (id === 'blackRgtDot')
         this.append(blackRgt)
-
-
-
+    
 }
