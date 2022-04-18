@@ -68,17 +68,21 @@ function dragLeave() {
 
     if (color === e.target.id.replace('Target', '')) {
         console.log('Match');
-        // Add dot tot he drop target
+        // Add dot tot he drop target since it is the correct color
         e.target.appendChild(draggedDot);
         dotsCorrect += 1;
+        setTimeout(() => {
+            if(dotsCorrect === 5) {
+                console.log('Images Correct')
+                document.querySelector('.source').innerHTML = '<h1>Congratulations, Logo Complete!</h1>';
+            }
+        }, 1000)
 
     } else {
         console.log('No Match');
     }
     
-    if(dotsCorrect === 5) {
-        document.querySelector('.source').innerHTML = '<h1>Congratulations, Logo Complete!</h1>';
-    }
+    
     console.log(dotsCorrect);
 
     // Get the Dot to Stay in Target

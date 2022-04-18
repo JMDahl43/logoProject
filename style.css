@@ -87,5 +87,17 @@ h1 {
 
 button {
     margin: 10px 1px;
-    font-size: 1.5e;
+    background-color: #c7c7c7; /* Green */
+    border: none;
+    color: #333;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #333;
+    color: #c7c7c7;
+    cursor: pointer;
 }
