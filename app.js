@@ -1,19 +1,24 @@
 // Step 1: dragstart, dragover, drop
 // Step 2: drag, dragend, dragenter, dragleave
 
-const source = document.querySelector('.source');
-const blue = document.querySelector('#blueDot');
-const blueTarget = document.querySelector('#blueTarget');
+/* const blue = document.querySelector('#blueDot');
 const red = document.querySelector('#redDot');
 const green = document.querySelector('#greenDot');
 const blackLft = document.querySelector('#blackLftDot');
-const blackRgt = document.querySelector('#blackRgtDot'); 
+const blackRgt = document.querySelector('#blackRgtDot');  */
 
 const targets = document.querySelectorAll('.targetDrop');
 let dotsCorrect = 0;
 
-//const dots = ['blue', 'red', 'green', 'blackLft', 'blackRgt'];
 // Target Drop Listeners
+const dots = document.querySelectorAll('.dot');
+for(const dot of dots) {
+    //console.log("Source: ", dot);
+    dot.addEventListener('dragstart', dragStart);
+    dot.addEventListener('dragend', dragEnd);
+}
+
+/* 
 blue.addEventListener('dragstart', dragStart);
 blue.addEventListener('dragend', dragEnd);
 red.addEventListener('dragstart', dragStart);
@@ -23,10 +28,11 @@ green.addEventListener('dragend', dragEnd);
 blackLft.addEventListener('dragstart', dragStart);
 blackLft.addEventListener('dragend', dragEnd);
 blackRgt.addEventListener('dragstart', dragStart);
-blackRgt.addEventListener('dragend', dragEnd);
+blackRgt.addEventListener('dragend', dragEnd); */
 
 // Loop through Target Divs
 for(const target of targets) {
+    console.log("Target: ", target);
     target.addEventListener('dragover', dragOver);
     target.addEventListener('dragenter', dragEnter);
     target.addEventListener('dragleave', dragLeave);
