@@ -1,4 +1,4 @@
-// Loop through Source Dots
+// Loop through Source Dot Images
 const dots = document.querySelectorAll('.dot');
 for(const dot of dots) {
     dot.addEventListener('dragstart', dragStart);
@@ -34,15 +34,16 @@ function dragLeave() {
     this.className = 'targetDrop';
 }
 
+// Initialize Correct Dot Counter
 let dotsCorrect = 0;
 
 function dragDrop(e) {
+    // Get the draggable element
     const id = e.dataTransfer.getData('text/plain');
-
-    // get the draggable element
     const draggedDot = document.getElementById(id);
     const color = id.replace('Dot', '');
-
+    
+    // Check the dot to see if the color matches the space color id
     if (color === e.target.id.replace('Target', '')) {
 
         // Add dot tot he drop target since it is the correct color
@@ -52,8 +53,7 @@ function dragDrop(e) {
             if(dotsCorrect === 5) {
                 document.querySelector('.source').innerHTML = '<h1>Congratulations, Logo Complete!</h1>';
             }
-        }, 1000)
-
+        }, 1000);
     }
 }
 
