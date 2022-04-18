@@ -72,5 +72,5 @@ function dragLeave() {
         this.append(blackLft)
     else if (id === 'blackRgtDot')
         this.append(blackRgt)
-        
-    }
+
+}

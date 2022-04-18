@@ -40,15 +40,40 @@ h1 {
     background-image: url('img/ia-logo-back.png');
 }
 
+#blueTarget, #redTarget, #greenTarget, #blackLftTarget, #blackRgtTarget {
+    position: absolute;
+}
 #blueTarget {
-    border: 1px solid blue;
+    top: 234px;
+    left: 291px;
+    /* border: 1px solid blue; */
+}
+#redTarget {
+    top:258px;
+    left:472px;
+    /* border: 1px solid red; */
+}
+#greenTarget {
+    top:522px;
+    left:160px;
+    /* border: 1px solid green; */
+}
+#blackLftTarget {
+    top:379px;
+    left:64px;
+    /* border: 1px solid black; */
+}
+#blackRgtTarget {
+    top:474px;
+    left:435px;
+    /* border: 1px solid maroon; */
 }
 
 /*  Target Square */
 .targetDrop {
     height: 86px;
     width: 86px;
-    border: 1px solid #c7c7c7;
+    /* border: 1px solid #c7c7c7; */
     text-align: center;
     background-color: #fff;
 }
@@ -58,7 +83,7 @@ h1 {
 }
 
 .hold {
-    border: solid lightgray 4px;
+    /*border: solid lightgray 4px;*/
 }
 
 button {
