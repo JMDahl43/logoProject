@@ -61,6 +61,10 @@ function dragLeave() {
     const id = e.dataTransfer.getData('text/plain');
     console.log('ID', id);
 
+    // get the draggable element
+    const draggedDot = document.getElementById(id);
+    const color = id.replace('Dot', '');
+
     dotsCorrect += 1;
     if(dotsCorrect === 5) {
         document.querySelector('.source').innerHTML = '<h1>Congratulations, Logo Complete!</h1>';
@@ -79,4 +83,12 @@ function dragLeave() {
     else if (id === 'blackRgtDot')
         this.append(blackRgt)
     
+}
+
+const resetBtn = document.querySelector('button');
+resetBtn.addEventListener('click', resetLogo);
+
+function resetLogo() {
+    //console.log('reset logo');
+    location.reload();
 }
