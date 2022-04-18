@@ -39,6 +39,7 @@ function dragStart(e) {
 
 function dragEnd() {
     console.log('End');
+    this.className = '';
 }
 
 function dragOver(e) {
@@ -48,11 +49,10 @@ function dragOver(e) {
 
 function dragEnter(e) { 
     e.preventDefault();
-    console.log('Enter');
-    e.target.classList.add('drag-over');
+    //console.log('Enter');
 }
 function dragLeave() {
-    console.log('Leave');
+    //console.log('Leave');
     this.className = 'targetDrop';
 }
 
@@ -60,7 +60,7 @@ function dragLeave() {
     //console.log('Drop');
     const id = e.dataTransfer.getData('text/plain');
     console.log('ID', id);
-
+    
     // Get the Dot to Stay in Target
     if (id === 'blueDot')
         this.append(blue);
@@ -72,5 +72,7 @@ function dragLeave() {
         this.append(blackLft)
     else if (id === 'blackRgtDot')
         this.append(blackRgt)
+
+
 
 }

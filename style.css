@@ -10,7 +10,8 @@ body{
 }
 
 h1 {
-    height: 24px;
+    text-align: center;
+    margin: 15px auto;
 }
 
 .source {
@@ -45,27 +46,27 @@ h1 {
 }
 #blueTarget {
     top: 234px;
-    left: 291px;
+    left: 293px;
     /* border: 1px solid blue; */
 }
 #redTarget {
     top:258px;
-    left:472px;
+    left:473px;
     /* border: 1px solid red; */
 }
 #greenTarget {
-    top:522px;
-    left:160px;
+    top:523px;
+    left:161px;
     /* border: 1px solid green; */
 }
 #blackLftTarget {
     top:379px;
-    left:64px;
+    left:65px;
     /* border: 1px solid black; */
 }
 #blackRgtTarget {
     top:474px;
-    left:435px;
+    left:437px;
     /* border: 1px solid maroon; */
 }
 
@@ -78,14 +79,9 @@ h1 {
     background-color: #fff;
 }
 
-.drag-over {
-    border: dashed 1px maroon;
+.hide {
+    display: none;
 }
-
-.hold {
-    /*border: solid lightgray 4px;*/
-}
-
 button {
     margin: 10px 1px;
     font-size: 1.5e;
