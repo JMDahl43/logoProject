@@ -44,14 +44,12 @@ function dragEnd() {
 function dragOver(e) {
     e.preventDefault();
     //console.log('Over');
-
 }
 
 function dragEnter(e) { 
     e.preventDefault();
     console.log('Enter');
     e.target.classList.add('drag-over');
-
 }
 function dragLeave() {
     console.log('Leave');
@@ -64,5 +62,15 @@ function dragLeave() {
     console.log('ID', id);
 
     // Get the Dot to Stay in Target
-    this.append(blue);
-}
+    if (id === 'blueDot')
+        this.append(blue);
+    else if (id === 'redDot')
+        this.append(red)
+    else if (id === 'greenDot')
+        this.append(green)
+    else if (id === 'blackLftDot')
+        this.append(blackLft)
+    else if (id === 'blackRgtDot')
+        this.append(blackRgt)
+        
+    }
