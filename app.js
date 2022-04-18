@@ -24,6 +24,7 @@ blackLft.addEventListener('dragend', dragEnd);
 blackRgt.addEventListener('dragstart', dragStart);
 blackRgt.addEventListener('dragend', dragEnd);
 
+// Loop through Target Divs
 for(const target of targets) {
     target.addEventListener('dragover', dragOver);
     target.addEventListener('dragenter', dragEnter);
@@ -31,33 +32,37 @@ for(const target of targets) {
     target.addEventListener('drop', dragDrop);
 }
 
-
 function dragStart(e) {
     console.log('Drag Start: ', e.target.id);
+    e.dataTransfer.setData('text/plain', e.target.id);
 }
 
 function dragEnd() {
-    //console.log('end');
+    console.log('End');
 }
 
 function dragOver(e) {
-    //console.log('Over');
     e.preventDefault();
+    //console.log('Over');
 
 }
 
 function dragEnter(e) { 
+    e.preventDefault();
     console.log('Enter');
+    e.target.classList.add('drag-over');
 
 }
 function dragLeave() {
     console.log('Leave');
+    this.className = 'targetDrop';
 }
 
  function dragDrop(e) {
     //console.log('Drop');
-   // e.preventDefault();
     const id = e.dataTransfer.getData('text/plain');
     console.log('ID', id);
-    
+
+    // Get the Dot to Stay in Target
+    this.append(blue);
 }
