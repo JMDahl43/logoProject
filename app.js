@@ -12,6 +12,7 @@ const blackRgt = document.querySelector('#blackRgtDot');
 const targets = document.querySelectorAll('.targetDrop');
 let dotsCorrect = 0;
 
+//const dots = ['blue', 'red', 'green', 'blackLft', 'blackRgt'];
 // Target Drop Listeners
 blue.addEventListener('dragstart', dragStart);
 blue.addEventListener('dragend', dragEnd);
@@ -65,14 +66,23 @@ function dragLeave() {
     const draggedDot = document.getElementById(id);
     const color = id.replace('Dot', '');
 
-    dotsCorrect += 1;
+    if (color === e.target.id.replace('Target', '')) {
+        console.log('Match');
+        // Add dot tot he drop target
+        e.target.appendChild(draggedDot);
+        dotsCorrect += 1;
+
+    } else {
+        console.log('No Match');
+    }
+    
     if(dotsCorrect === 5) {
         document.querySelector('.source').innerHTML = '<h1>Congratulations, Logo Complete!</h1>';
     }
     console.log(dotsCorrect);
 
     // Get the Dot to Stay in Target
-    if (id === 'blueDot')
+    /* if (id === 'blueDot')
         this.append(blue);
     else if (id === 'redDot')
         this.append(red)
@@ -81,7 +91,7 @@ function dragLeave() {
     else if (id === 'blackLftDot')
         this.append(blackLft)
     else if (id === 'blackRgtDot')
-        this.append(blackRgt)
+        this.append(blackRgt) */
     
 }
 
